@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -133,3 +134,131 @@
   </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tarjetas con enlace</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #151924;
+      --text: #e9eef5;
+      --muted: #a9b2c0;
+      --ring: #4aa8ff;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 40px 20px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% 0%, #0c1018 0%, #0f1115 40%, #0b0d12 100%);
+      color: var(--text);
+    }
+    h1 { text-align: center; margin: 0 0 24px; font-weight: 700; }
+    p.lead { text-align: center; margin: 0 0 28px; color: var(--muted); }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 800px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px)  { .grid { grid-template-columns: 1fr; } }
+
+    /* Hacemos la tarjeta un <a> completo */
+    .card {
+      display: block;
+      background: linear-gradient(180deg, #171c28 0%, #121620 100%);
+      border-radius: var(--radius);
+      border: 1px solid #1d2331;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      position: relative;
+      isolation: isolate;
+    }
+    .card::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(74,168,255,.08), rgba(74,168,255,0));
+      opacity: 0; transition: opacity .18s ease;
+      pointer-events: none;
+    }
+    .card:hover, .card:focus-visible {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(0,0,0,.5);
+      border-color: #273149;
+    }
+    .card:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+    .card:hover::after { opacity: 1; }
+
+    .card-img {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      background: #0a0c12;
+    }
+    .card-body {
+      padding: 16px 16px 18px;
+    }
+    .card-title {
+      margin: 0 0 6px; font-size: 1.05rem; font-weight: 700; letter-spacing: .2px;
+    }
+    .card-text {
+      margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.35rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mis proyectos</h1>
+  <p class="lead">Haz clic en cualquier tarjeta ver mi proyecto.</p>
+
+  <div class="grid">
+    <!-- Tarjeta 1 -->
+    <a class="card" href="https://luisgtgt.github.io/comida_rapidas/" target="_blank" rel="comida" aria-label="Ir al enlace 1">
+      <img class="card-img" src="./comidas.png" alt="pagina de comidas" loading="lazy" />
+      <div class="card-body">
+        <h2 class="card-title">Restaurante</h2>
+        <p class="card-text">Pagina hecha para un restaurante</p>
+      </div>
+    </a>
+
+    <!-- Tarjeta 2 -->
+    <a class="card" href="https://luisgtgt.github.io/pagina-de-agosto/" target="_blank" rel="teinda" aria-label="Ir al enlace 2">
+      <img class="card-img" src="tinda.png" alt="pagina de tienda" loading="lazy" />
+      <div class="card-body">
+        <h2 class="card-title">Tienda</h2>
+        <p class="card-text">Pagina hecha para una tienda</p>
+      </div>
+    </a>
+
+    <!-- Tarjeta 3 -->
+    <a class="card" href="https://luisgtgt.github.io/cosas_luis/" target="_blank" rel="factura" aria-label="Ir al enlace 3">
+      <img class="card-img" src="./factura.png" alt="factura" loading="lazy" />
+      <div class="card-body">
+        <h2 class="card-title">Factura</h2>
+        <p class="card-text">Una factura para el publico.</p>
+      </div>
+    </a>
+
+    <!-- Tarjeta 4 -->
+    <a class="card" href="https://luisgtgt.github.io/Juego-de-aventura-/" target="_blank" rel="juegos" aria-label="Ir al enlace 4">
+      <img class="card-img" src="juegos.png" alt="juego" loading="lazy" />
+      <div class="card-body">
+        <h2 class="card-title">juego</h2>
+        <p class="card-text">Pagina de presentacion de un juego.</p>
+      </div>
+    </a>
+  </div>
+</body>
+</html>
+>>>>>>> 88370bac0a7bcf88b2eca2838d469bd90de5e716
